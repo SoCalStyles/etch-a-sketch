@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 const bigContainer = document.querySelector('.bigContainer');
 const generateButton = document.querySelector('.generateButton');
+const clear = document.querySelector('.clear');
 
 // create 16x16 grid of square divs
 function createTiles() {
@@ -13,7 +14,7 @@ function createTiles() {
             tileContainer.appendChild(tile);
             tile.classList.add('singleTile');
             tile.addEventListener('mouseover', () => {
-                tile.style.backgroundColor = "blue";
+                tile.style.backgroundColor = "black";
             })
         }
     }
@@ -40,7 +41,7 @@ function generateGrid() {
                 tileContainer.appendChild(tile);
                 tile.classList.add('singleTile');
                 tile.addEventListener('mouseover', () => {
-                    tile.style.backgroundColor = "blue";
+                    tile.style.backgroundColor = "black";
                 })
             }    
         }    
@@ -51,7 +52,9 @@ generateButton.addEventListener('click', () => {
     generateGrid();
 });
 
-
+clear.addEventListener('click', () => {
+    window.location.reload();
+})
 
 
 
