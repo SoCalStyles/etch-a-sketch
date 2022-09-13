@@ -48,10 +48,11 @@ body {
 }
 
 .rainbow {
-    background-image: linear-gradient(red, orange, yellow, green, blue, purple);
+    background-image: conic-gradient(red, orange, yellow, green, blue, purple);
     border: none;
     border-radius: 3px;
     font-size: 16px;
+    color: white;
     padding: 5px 10px;
 }
 
