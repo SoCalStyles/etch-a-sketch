@@ -12,12 +12,16 @@ function createTiles() {
             const tile = document.createElement('div');
             tileContainer.appendChild(tile);
             tile.classList.add('singleTile');
+            tile.addEventListener('mouseover', () => {
+                tile.style.backgroundColor = "blue";
+            })
         }
     }
 }
 
 createTiles();
 
+// Generates new grid based on user input
 function generateGrid() {
     let answer = prompt('How many squares would you like on each side?');
     answer = +(answer);
@@ -26,6 +30,7 @@ function generateGrid() {
     } else if (answer <= 0) {
         alert('That number is too small.');
     } else {
+        bigContainer.textContent = "";
         for (let i = 0; i < answer; i++) {
             const tileContainer = document.createElement('div');
             bigContainer.appendChild(tileContainer);
@@ -34,16 +39,19 @@ function generateGrid() {
                 const tile = document.createElement('div');
                 tileContainer.appendChild(tile);
                 tile.classList.add('singleTile');
-            }
-        }
+                tile.addEventListener('mouseover', () => {
+                    tile.style.backgroundColor = "blue";
+                })
+            }    
+        }    
     }
 }
 
 generateButton.addEventListener('click', () => {
-    // remove original 16x16 grid
-    bigContainer.textContent = "";
     generateGrid();
 });
+
+
 
 
 

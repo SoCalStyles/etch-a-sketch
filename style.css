@@ -1,22 +1,47 @@
+h1 {
+    font-size: 60px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: rgb(87, 87, 87);
+}
 
+body {
+    background-color: rgba(147, 203, 255, 0.411);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.generateButton {
+    margin: 20px 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: black;
+}
+
+.generateButton:hover {
+    transform: scale(1.05);
+}
 
 .bigContainer {
     display: flex;
     justify-content: center;
+    height: 500px;
+    width: 500px;
 }
 
 .tileContainer {
-   
+    flex: 1;
+   display: flex;
+   flex-direction: column;
 }
 
 .singleTile {
-    flex: 1 1 auto;
-    border: 1px solid black;
-    background-color: pink;
-    height: 40px;
-    width: 40px;
-}
-
-.singleTile:hover {
-    background-color: blue;
+    flex: 1;
+    background-color: white;
 }
