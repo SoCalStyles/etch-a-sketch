@@ -1,7 +1,7 @@
 const body = document.querySelector('body');
 const bigContainer = document.querySelector('.bigContainer');
 const generateButton = document.querySelector('.generateButton');
-const erase = document.querySelector('.erase');
+const eraser = document.querySelector('.eraser');
 const classic = document.querySelector('.classic');
 const rainbow = document.querySelector('.rainbow');
 
@@ -11,6 +11,9 @@ classic.addEventListener('click', () => {
 })
 rainbow.addEventListener('click', () => {
     mode = "rainbow";
+})
+eraser.addEventListener('click', () => {
+    mode = "eraser";
 })
 
 // Generate random rgb value
@@ -35,6 +38,8 @@ function createTiles() {
             tile.addEventListener('mouseover', () => {
                 if (mode === "rainbow") {
                     tile.style.backgroundColor = randomColor();
+                } else if (mode === "eraser") {
+                    tile.style.backgroundColor = "white";
                 } else {
                     tile.style.backgroundColor = "black";
                 }
@@ -66,6 +71,8 @@ function generateGrid() {
                 tile.addEventListener('mouseover', () => {
                     if (mode === "rainbow") {
                         tile.style.backgroundColor = randomColor();
+                    } else if (mode === "eraser") {
+                        tile.style.backgroundColor = "white";
                     } else {
                         tile.style.backgroundColor = "black";
                     }
@@ -79,10 +86,7 @@ generateButton.addEventListener('click', () => {
     generateGrid();
 });
 
-// Erase the board
-erase.addEventListener('click', () => {
-    window.location.reload();
-})
+
 
 
 

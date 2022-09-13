@@ -48,7 +48,7 @@ body {
 }
 
 .rainbow {
-    background-color: pink;
+    background-image: linear-gradient(red, orange, yellow, green, blue, purple);
     border: none;
     border-radius: 3px;
     font-size: 16px;
@@ -73,16 +73,17 @@ body {
     background-color: white;
 }
 
-.erase {
+.eraser {
     margin-top: 15px;
     padding: 10px 20px;
     border-radius: 3px;
     background-color: black;
     font-weight: 700;
-    color: white;
+    color: black;
+    background-color: pink;
     border: none;
 }
 
-.erase:hover {
+.eraser:hover {
     transform: scale(1.05);
 }
