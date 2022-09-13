@@ -1,7 +1,26 @@
 const body = document.querySelector('body');
 const bigContainer = document.querySelector('.bigContainer');
 const generateButton = document.querySelector('.generateButton');
-const clear = document.querySelector('.clear');
+const erase = document.querySelector('.erase');
+const classic = document.querySelector('.classic');
+const rainbow = document.querySelector('.rainbow');
+
+let mode = "classic";
+classic.addEventListener('click', () => {
+    mode = "classic";
+})
+rainbow.addEventListener('click', () => {
+    mode = "rainbow";
+})
+
+// Generate random rgb value
+function randomColor() {
+   let a = Math.floor(Math.random() * 256);
+   let b = Math.floor(Math.random() * 256);
+   let c = Math.floor(Math.random() * 256);
+   let RGB = `rgb(${a},${b},${c})`;
+   return RGB;
+}
 
 // create 16x16 grid of square divs
 function createTiles() {
@@ -14,7 +33,11 @@ function createTiles() {
             tileContainer.appendChild(tile);
             tile.classList.add('singleTile');
             tile.addEventListener('mouseover', () => {
-                tile.style.backgroundColor = "black";
+                if (mode === "rainbow") {
+                    tile.style.backgroundColor = randomColor();
+                } else {
+                    tile.style.backgroundColor = "black";
+                }
             })
         }
     }
@@ -41,7 +64,11 @@ function generateGrid() {
                 tileContainer.appendChild(tile);
                 tile.classList.add('singleTile');
                 tile.addEventListener('mouseover', () => {
-                    tile.style.backgroundColor = "black";
+                    if (mode === "rainbow") {
+                        tile.style.backgroundColor = randomColor();
+                    } else {
+                        tile.style.backgroundColor = "black";
+                    }
                 })
             }    
         }    
@@ -52,7 +79,8 @@ generateButton.addEventListener('click', () => {
     generateGrid();
 });
 
-clear.addEventListener('click', () => {
+// Erase the board
+erase.addEventListener('click', () => {
     window.location.reload();
 })
 

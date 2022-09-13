@@ -1,8 +1,9 @@
 h1 {
-    font-size: 60px;
+    font-size: 70px;
     margin-top: 30px;
     margin-bottom: 0px;
-    color: rgb(87, 87, 87);
+    color: white;
+    text-shadow: 1px 1px 5px darkblue;
 }
 
 body {
@@ -11,10 +12,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 0px;
 }
 
 .generateButton {
+    margin-top: 15px;
     margin-bottom: 10px;
     padding: 10px 20px;
     border-radius: 3px;
@@ -25,8 +27,32 @@ body {
     background-color: black;
 }
 
-.generateButton:hover {
+.generateButton:hover, .classic:hover, .rainbow:hover {
     transform: scale(1.05);
+}
+
+.modeSection {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.classic {
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.rainbow {
+    background-color: pink;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 5px 10px;
 }
 
 .bigContainer {
@@ -47,8 +73,8 @@ body {
     background-color: white;
 }
 
-.clear {
-    margin-top: 10px;
+.erase {
+    margin-top: 15px;
     padding: 10px 20px;
     border-radius: 3px;
     background-color: black;
@@ -57,6 +83,6 @@ body {
     border: none;
 }
 
-.clear:hover {
+.erase:hover {
     transform: scale(1.05);
 }
