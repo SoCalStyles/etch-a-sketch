@@ -1,9 +1,11 @@
 const body = document.querySelector('body');
 const bigContainer = document.querySelector('.bigContainer');
+bigContainer.style.cursor = "crosshair";
 const generateButton = document.querySelector('.generateButton');
 const eraser = document.querySelector('.eraser');
 const classic = document.querySelector('.classic');
 const rainbow = document.querySelector('.rainbow');
+const clearBoard = document.querySelector('.clearBoard');
 
 let mode = "classic";
 classic.addEventListener('click', () => {
@@ -69,7 +71,7 @@ function generateGrid() {
                 tileContainer.appendChild(tile);
                 tile.classList.add('singleTile');
                 tile.addEventListener('mouseover', () => {
-                    if (mode === "rainbow") {
+                    if (mode === "rainbow") {                       
                         tile.style.backgroundColor = randomColor();
                     } else if (mode === "eraser") {
                         tile.style.backgroundColor = "white";
@@ -80,14 +82,37 @@ function generateGrid() {
             }    
         }    
     }
+    clearBoard.addEventListener('click', () => {
+        bigContainer.textContent = "";
+            for (let i = 0; i < answer; i++) {
+                const tileContainer = document.createElement('div');
+                bigContainer.appendChild(tileContainer);
+                tileContainer.classList.add('tileContainer');
+                for (let i = 0; i < answer; i++) {
+                    const tile = document.createElement('div');
+                    tileContainer.appendChild(tile);
+                    tile.classList.add('singleTile');
+                    tile.addEventListener('mouseover', () => {
+                        if (mode === "rainbow") {
+                            tile.style.backgroundColor = randomColor();
+                        } else if (mode === "eraser") {
+                            tile.style.backgroundColor = "white";
+                        } else {
+                            tile.style.backgroundColor = "black";
+                        }
+                    })
+                }    
+            }    
+    })
 }
 
 generateButton.addEventListener('click', () => {
     generateGrid();
 });
 
-
-
-
+clearBoard.addEventListener('click', () => {
+    bigContainer.textContent = "";
+    createTiles();
+});
 
 
