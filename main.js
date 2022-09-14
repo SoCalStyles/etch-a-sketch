@@ -124,4 +124,4 @@ clearBoard.addEventListener('click', () => {
     createTiles();
 });
 
-
+// create mode where each hover adds only 10% black to each tile
