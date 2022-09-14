@@ -10,12 +10,21 @@ const clearBoard = document.querySelector('.clearBoard');
 let mode = "classic";
 classic.addEventListener('click', () => {
     mode = "classic";
+    rainbow.classList.remove('active');
+    eraser.classList.remove('active');
+    classic.classList.add('active');
 })
 rainbow.addEventListener('click', () => {
     mode = "rainbow";
+    classic.classList.remove('active');
+    eraser.classList.remove('active');
+    rainbow.classList.add('active');
 })
 eraser.addEventListener('click', () => {
     mode = "eraser";
+    rainbow.classList.remove('active');
+    classic.classList.remove('active');
+    eraser.classList.add('active');
 })
 
 // Generate random rgb value
